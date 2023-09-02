@@ -9,9 +9,9 @@
     <center id="launcherWin">
     <h1>Mine.craft</h1>
 <select name="version" id="versionSelect">
-</select></br>
-<button onclick="play(document.getElementById('versionSelect').options[document.getElementById('versionSelect').selectedIndex])">Play</button><br>
-</center><br>
-<script src="./script.js"></script>
+</select><br><br>
+<button class="play" onclick="play(document.getElementById('versionSelect').options[document.getElementById('versionSelect').selectedIndex])">Play</button><br>
+</center><br><div class="loadingBar"></div><br><center><button class="openModFolder" onclick="openMods()">Open Mods Folder</button><dl hidden="true"  class="modsList"><h2>Mods</h2></dl></center>
+<script src="./script.js"></script><script src="./mods.js"></script>
       </body>
 </html>
