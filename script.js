@@ -66,6 +66,8 @@ if(navigator.onLine){
     window.versionNames = versionNames;
 }
 async function play(select){
+    if(gettingGame !== true){
+    var gettingGame = true;
     var selection = select;
     window.selection = selection;
     window.versionFolderSelect = window.versionFolders[window.versionNames.indexOf(selection.name)];
@@ -75,16 +77,34 @@ async function play(select){
         progressBar.max = "100";
         progressBar.value = "0";
         progressBar.style = "border-radius:0px;border:none;"
-        document.body.appendChild(progressBar);
+        document.getElementsByClassName("loadingBar")[0].appendChild(progressBar);
         if (!fs.existsSync(__dirname + "/" + window.versionFolders[window.versionNames.indexOf(selection.name)])){
             fs.mkdirSync(__dirname + "/" + window.versionFolders[window.versionNames.indexOf(selection.name)]);
         }
+    if (!fs.existsSync(__dirname + "/" + window.versionFolders[window.versionNames.indexOf(selection.name)] + "/mods")){
+        fs.mkdirSync(__dirname + "/" + window.versionFolders[window.versionNames.indexOf(selection.name)] + "/mods");
+        var justCreated = true;
+    }
+        fs.readdir(__dirname + "/" + window.versionFolders[window.versionNames.indexOf(selection.name)] + "/mods", (err, files) => {
+            if (err) throw err;
+            for (var file of files) {
+                var fileModDelete = __dirname + "/" + window.versionFolders[window.versionNames.indexOf(selection.name)] + "/mods/" + file;
+                fs.unlink(fileModDelete, (err) => { if (err) { console.error(err) } else { console.log('File deleted') } })
+            }
+        });
+        var modsToAdd = [];
+        for(var modAdd = 0; modAdd < window.gameModList.length; modAdd++){
+            if(window.gameModList[modAdd].version = window.versionNames[window.versionNames.indexOf(selection.name)] && window.gameModList[modAdd].activated === true){
+                fs.writeFileSync(__dirname + "/" + window.versionFolders[window.versionNames.indexOf(selection.name)] + "/mods/" + window.gameModNames[modAdd], fs.readFileSync(window.gameModPaths[modAdd], "utf8"));
+            }
+        }
         async function getFiles(){
-            window.filesDownloaded = 0;
-        for(var fileDownload = 0; fileDownload < window.versionFiles[window.versionNames.indexOf(selection.name)].length; fileDownload++){
             var url = window.versionUrls[window.versionNames.indexOf(selection.name)];
             var filename = __dirname + "/" + window.versionFolders[window.versionNames.indexOf(selection.name)] + "/";
+            window.filesDownloaded = 0;
+        for(var fileDownload = 0; fileDownload < window.versionFiles[window.versionNames.indexOf(selection.name)].length; fileDownload++){
             var filePath = window.versionFiles[window.versionNames.indexOf(selection.name)][fileDownload]
+            try{
             var response = await fetch(url + "/" + filePath);
             if(filePath.split(".")[1] == "mp3"){
                 var reader = new FileReader();
@@ -100,20 +120,42 @@ async function play(select){
                 var data = await response.text();
                 fs.writeFileSync(filename + filePath.replace(/%20/g, " "), data);
             }
-            window.filesDownloaded++;
-            document.getElementById("fileDownloadStatus").value = Math.round(100*(window.filesDownloaded/window.versionFiles[window.versionNames.indexOf(selection.name)].length));
+            }catch(err){
+                var response = await fetch(url + "/" + filePath);
+            if(filePath.split(".")[1] == "mp3"){
+                var reader = new FileReader();
+                reader.onload = function() {
+                    var dataSave = this.result;
+                    var data = new Uint8Array(dataSave);
+                    fs.writeFileSync(filename + filePath.replace(/%20/g, " "), data);
+                };
+                var arrayBuffer = await response.arrayBuffer();
+                var blob = new Blob([arrayBuffer], {type: 'audio/mpeg'});
+                reader.readAsArrayBuffer(blob);
+            }else{
+                var data = await response.text();
+                fs.writeFileSync(filename + filePath.replace(/%20/g, " "), data);
+            }
+            }
+            window.filesDownloaded+=0.5;
+            document.getElementById("fileDownloadStatus").value = 100*(window.filesDownloaded/window.versionFiles[window.versionNames.indexOf(selection.name)].length);
         }
         if(interval !== ""){
             var interval = setInterval(check, 10);
         }
+        if(100*(window.filesDownloaded/window.versionFiles[window.versionNames.indexOf(selection.name)].length) == 100){
         var progressRemove = document.getElementById("fileDownloadStatus");
         progressRemove.remove();
         const { spawn } = require('child_process');
         const child = spawn(process.execPath, [__dirname + "/" + window.versionFolders[window.versionNames.indexOf(selection.name)] + "/main.js"]);
         }
+        }
+        getFiles();
         getFiles();
     }else if((fs.existsSync(__dirname + "/" + window.versionFolders[window.versionNames.indexOf(selection.name)]))){
         const { spawn } = require('child_process');
         const child = spawn(process.execPath, [__dirname + "/" + window.versionFolders[window.versionNames.indexOf(selection.name)] + "/main.js"]);
+    }
+    gettingGame = false;
     }
 }
