@@ -35,7 +35,7 @@ select{
     font-size: 80%;
     border-radius: 5px;
 }
-button{
+button.play{
     font-family: "Minecraft";
     background-color: rgb(61,145,64);
     border: none;
@@ -45,4 +45,31 @@ button{
     padding: 10px;
     font-size: 80%;
     border-radius: 5px;
+}
+button{
+    font-family: "Minecraft";
+    background-color: rgb(31,38,42);
+    border: none;
+    color: white;
+    outline: none;
+    width: 20%;
+    padding: 10px;
+    font-size: 80%;
+    border-radius: 5px;
+}
+dl.modsList{
+    border-radius: 5px;
+    color: white;
+    outline: none;
+    font-family: roboto, sans-serif;
+    border: 1px white solid;
+    padding: 10px;
+    background-color: rgb(40, 40, 40);
+    width: 50%;
+}
+dt,dd{ 
+    display:inline; 
+}
+dd{
+    color: rgb(164, 164, 164);
 }
