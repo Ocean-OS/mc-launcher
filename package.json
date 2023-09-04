@@ -1,0 +1,16 @@
+{
+  "name": "Mine.craft Launcher",
+  "productName": "Mine.craft Launcher",
+  "description": "The official Mine.craft launcher.",
+  "keywords": [],
+  "main": "./main.js",
+  "version": "0.2",
+  "author": "computerguy.",
+  "scripts": {
+    "start": "electron ."
+  },
+  "dependencies": {},
+  "devDependencies": {
+    "electron": "25.0.1"
+  }
+}
