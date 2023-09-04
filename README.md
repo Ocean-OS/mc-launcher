@@ -15,7 +15,9 @@ This is a repository for the source code of the Mine.craft Launcher, an applicat
 ## How to run
 If you want, you can just go to the latest release and download and extract the compatible zip file. If you either don't have a compatible device, or you just want to package it yourself, here's how: 
 - Download all files listed in the Directory section of this doc.
+- Download the distributions of [Electron 25.0.1](https://github.com/electron/electron/releases/tag/v25.0.1) for your operating system, extract them, and put the folders in a folder called "electron", in the Directory files area.
+- If your Internet connection isn't consistent, download [this JS file](https://ocean-os.github.io/mc-assets/versions.js).
 - If you don't have a Windows computer, you will need to convert the ICO file to another format.
 - Install electron-packager using your package manager (npm or yarn)
 - Run the command `npx electron-packager [insert folder name for directory files] --platform=[insert win32 for windows, darwin for mac, or linux for linux] --icon=[insert folder name for directory files]/[insert icon file name]`.
-- This should make a zip file that contains the app. 
+- This should make a zip file or folder that contains the app. 
