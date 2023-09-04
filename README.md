@@ -10,7 +10,8 @@ This is a repository for the source code of the Mine.craft Launcher, an applicat
 - **icon.ico** - This is the icon for the app. It is formatted for Windows, so you may need to convert the file format if you do not have a compatible device.
 - **package.json** - This holds information about the app. 
   
-  **WARNING: As this is still in an extremely early alpha stage, many features are nonexistent or unstable. We do not recommend using the launcher at this time.** 
+  **WARNING: As this is still in an extremely early alpha stage, many features are nonexistent or unstable. We do not recommend using the launcher at this time.**
+  **This is not currently compatible with Mac OS. Compatibility with Linux isn't fully tested.**
 ## How to run
 If you want, you can just go to the latest release and download and extract the compatible zip file. If you either don't have a compatible device, or you just want to package it yourself, here's how: 
 - Download all files listed in the Directory section of this doc.
