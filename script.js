@@ -138,7 +138,7 @@ async function play(select){
             }
             }
             window.filesDownloaded+=0.5;
-            document.getElementById("fileDownloadStatus").value = 100*(window.filesDownloaded/window.versionFiles[window.versionNames.indexOf(selection.name)].length);
+            document.getElementById("fileDownloadStatus").value = /*document.getElementById("fileDownloadStatus").value + Math.round(100*(0.5/window.versionFiles[window.versionNames.indexOf(selection.name)].length));*/100*(window.filesDownloaded/window.versionFiles[window.versionNames.indexOf(selection.name)].length);
         }
         if(interval !== ""){
             var interval = setInterval(check, 10);
@@ -146,16 +146,50 @@ async function play(select){
         if(100*(window.filesDownloaded/window.versionFiles[window.versionNames.indexOf(selection.name)].length) == 100){
         var progressRemove = document.getElementById("fileDownloadStatus");
         progressRemove.remove();
+        const os = require('os');
+        const path = require('path');
+        const osType = os.type();
+        let appFileType = undefined;
+        switch (osType) {
+        case 'Windows_NT':
+            appFileType = '.exe';
+            break;
+        case 'Linux':
+            appFileType = '';
+            break;
+        default:
+            appFileType = undefined;
+        }
+        window.electronPath = path.join("electron", "electron-v25.0.1-" + process.platform + "-" + os.arch, "electron" + appFileType);
+        if(appFileType == undefined){alert("Sorry, this version has not been made compatible for your Operating System. It is currently compatible for Debian variations of Linux, and Windows 10 and above.")}else{
         const { spawn } = require('child_process');
-        const child = spawn(process.execPath, [__dirname + "/" + window.versionFolders[window.versionNames.indexOf(selection.name)] + "/main.js"]);
+        const child = spawn(path.join(__dirname, window.electronPath), [path.join(__dirname, window.versionFolders[window.versionNames.indexOf(selection.name)], "main.js")]);
+        }
         }
         }
         getFiles();
         getFiles();
     }else if((fs.existsSync(__dirname + "/" + window.versionFolders[window.versionNames.indexOf(selection.name)]))){
+        const os = require('os');
+        const path = require('path');
+        const osType = os.type();
+        let appFileType = undefined;
+        switch (osType) {
+        case 'Windows_NT':
+            appFileType = '.exe';
+            break;
+        case 'Linux':
+            appFileType = '';
+            break;
+        default:
+            appFileType = undefined;
+        }
+        window.electronPath = path.join("electron", "electron-v25.0.1-" + process.platform + "-" + os.arch, "electron" + appFileType);
+        if(appFileType == undefined){alert("Sorry, this version has not been made compatible for your Operating System. It is currently compatible for Debian variations of Linux, and Windows 10 and above.")}else{
         const { spawn } = require('child_process');
-        const child = spawn(process.execPath, [__dirname + "/" + window.versionFolders[window.versionNames.indexOf(selection.name)] + "/main.js"]);
-    }
+        const child = spawn(path.join(__dirname, window.electronPath), [path.join(__dirname, window.versionFolders[window.versionNames.indexOf(selection.name)], "main.js")]);
+        }
+        }
     gettingGame = false;
     }
 }
