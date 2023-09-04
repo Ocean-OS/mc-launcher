@@ -1,14 +1,9 @@
 var gameMods = [];
 const path = require('path');
-//const fs = require('fs');
 const {shell} = require('electron');
 if (!fs.existsSync(__dirname + '\\mods')){
     fs.mkdirSync(__dirname + '\\mods');
     var justCreated = true;
-}
-function handleClick(id) {
-  // Do something when the checkbox is clicked
-  window.gameModList[id*1].activated = document.getElementById(id).checked;
 }
 function openMods(){
     shell.openPath(path.join(__dirname, "mods"));
@@ -59,18 +54,9 @@ function displayMods(){
             var modListCheck = document.createElement("input");
             modListCheck.type = "checkbox";
             modListCheck.id = gameModListAdd.toString();
-            /*modListCheck.onclick = function() {
-                var id = this.id;
-                var checked = this.checked;
-                window.gameModList[id*1].activated = checked;
-            };*/
-            //modListCheck.addEventListener("click", function(){handleClick(modListCheck.id)});
             modListCheck.checked = true;
             modListAdd.innerText = window.gameMods[gameModListAdd].title;
             modListVer.innerText = window.gameMods[gameModListAdd].version;
-            /*document.getElementsByClassName("modsList")[0].appendChild(modListAdd);
-            document.getElementsByClassName("modsList")[0].appendChild(modListVer);
-            document.getElementsByClassName("modsList")[0].appendChild(modListCheck);*/
             container.appendChild(modListAdd);
             container.appendChild(modListVer);
             container.appendChild(modListCheck);
