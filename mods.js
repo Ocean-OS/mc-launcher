@@ -57,6 +57,9 @@ function displayMods(){
             modListCheck.checked = true;
             modListAdd.innerText = window.gameMods[gameModListAdd].title;
             modListVer.innerText = window.gameMods[gameModListAdd].version;
+            /*document.getElementsByClassName("modsList")[0].appendChild(modListAdd);
+            document.getElementsByClassName("modsList")[0].appendChild(modListVer);
+            document.getElementsByClassName("modsList")[0].appendChild(modListCheck);*/
             container.appendChild(modListAdd);
             container.appendChild(modListVer);
             container.appendChild(modListCheck);
