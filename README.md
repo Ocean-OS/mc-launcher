@@ -21,3 +21,5 @@ If you want, you can just go to the latest release and download and extract the 
 - Install electron-packager using your package manager (npm or yarn)
 - Run the command `npx electron-packager [insert folder name for directory files] --platform=[insert win32 for windows, darwin for mac, or linux for linux] --icon=[insert folder name for directory files]/[insert icon file name]`.
 - This should make a zip file or folder that contains the app. 
+## Legacy/Support
+As software versions get older, many companies or developers tend to remove compatibility for them, whether that means changing a site, removing online files, or changing server code. For as long as possible, any version of the Mine.craft Launcher will work. I will keep any old files, and make sure there is some sort of backwards-compatibility between launcher versions if needed. 
