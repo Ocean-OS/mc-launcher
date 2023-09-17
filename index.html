@@ -7,11 +7,14 @@
   </head>
   <body>
     <center id="launcherWin">
-    <h1>Mine.craft</h1>
-<select name="version" id="versionSelect">
-</select><br><br>
-<button class="play" onclick="play(document.getElementById('versionSelect').options[document.getElementById('versionSelect').selectedIndex])">Play</button><br>
-</center><br><div class="loadingBar"></div><br><center><button class="openModFolder" onclick="openMods()">Open Mods Folder</button><dl hidden="true"  class="modsList"><h2>Mods</h2></dl></center>
-<script src="./script.js"></script><script src="./mods.js"></script>
-      </body>
+      <h1>Mine.craft</h1>
+      <select name="version" id="versionSelect"></select><br><br>
+      <button class="play" onclick="play(document.getElementById('versionSelect').options[document.getElementById('versionSelect').selectedIndex])">Play</button><br>
+    </center>
+    <br><div class="loadingBar"></div><br>
+    <center>
+      <button class="openModFolder" onclick="openMods()">Open Mods Folder</button><dl hidden="true" class="modsList"><h2>Mods</h2></dl><div id="changelog"></div>
+    </center><div class="notMojang">Not an official Minecraft service. Not approved by or associated with Mojang or Microsoft.</div><div class="launcherVersion">0.2.5 Alpha&nbsp;</div>
+  <script src="./script.js"></script><script src="./mods.js"></script>
+  </body>
 </html>
