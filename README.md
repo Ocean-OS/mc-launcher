@@ -1,7 +1,7 @@
 # Mine.craft Launcher
 This is a repository for the source code of the Mine.craft Launcher, an application that is currently in alpha stage. The Mine.craft Launcher can download and run different Mine.craft versions using the vanilla javascript fetch function and FS. 
 ## This repository is under the Creative Commons License CC-BY-NC-SA. For more information, read LICENSE.txt. 
-## Not an official Minecraft service. Not affiliated with Mojang or Microsoft.
+### Not an official Minecraft service. Not affiliated with Mojang or Microsoft.
 ## Directory
 - **main.js** - This is the runner of the application. This is what opens the window and starts the app.
 - **index.html** - This is the "container" of the application. This is the window that opens in the app.
