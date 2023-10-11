@@ -7,7 +7,7 @@ This is a repository for the source code of the Mine.craft Launcher, an applicat
 - **index.html** - This is the "container" of the application. This is the window that opens in the app.
 - **script.js** - This is the code that runs the app. It downloads the files for the selected game and then runs them. 
 - **styles.css** - This is the appearance of the app.
-- **mods.js** - This is what controls mods. It checks the mods folder in the application for changes, and when a game is selected, it tells script.js to add the selected mods to the game (if the version matches).
+- **mods.js** - This is what controls mods. It checks the mods folder in the application for changes, and when a game is selected, it tells script.js to add the selected mods to the game (if the version matches). This file may be updated whenever the mod system for the game changes, so it can work with any version. This may dramatically change soon when the mod file format changes to JSON. 
 - **icon.ico** - This is the icon for the app. It is formatted for Windows, so you may need to convert the file format if you do not have a compatible device.
 - **package.json** - This holds information about the app. 
   
