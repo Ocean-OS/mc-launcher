@@ -1,16 +1,16 @@
 {
-  "name": "mc-launcher",
-  "productName": "mc-launcher",
-  "description": "My Electron application description",
+  "name": "Mine.craft Launcher",
+  "productName": "Mine.craft Launcher 0.2.6 Alpha",
+  "description": "The official launcher for Mine.craft. Currently in Alpha Testing.",
   "keywords": [],
   "main": "./main.js",
-  "version": "1.0.0",
+  "version": "0.2.6 Alpha",
   "author": "computerguy.",
   "scripts": {
     "start": "electron ."
   },
   "dependencies": {},
   "devDependencies": {
-    "electron": "26.0.2"
+    "electron": "25.0.1"
   }
 }

@@ -11,19 +11,30 @@ function createWindow () {
     icon: icon,
     width: 800,
     height: 600,
+    show: false,
     webPreferences: {
       preload: path.join(__dirname, 'preload.js'),
       nodeIntegration: true,
       contextIsolation: false,
     }
-  })
+  });
   // and load the index.html of the app.
   mainWindow.maximize();
   mainWindow.setTitle("Loading...");
   mainWindow.loadFile('index.html');
+  mainWindow.show();
   ipcMain.on('loadStatus', (event, args) => {
     mainWindow.setProgressBar(args);
   });
+  ipcMain.on('updated', (event) => {
+    mainWindow.loadFile('index.html');
+    app.relaunch();
+  });
+  ipcMain.on('writeFile', (event, args) => {
+    var path = args.path;
+    var buff = args.data;
+    fs.writeFileSync(path, buff);
+  })
   // Open the DevTools.
   // mainWindow.webContents.openDevTools()
 }
