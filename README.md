@@ -9,7 +9,8 @@ This is a repository for the source code of the Mine.craft Launcher, an applicat
 - **styles.css** - This is the appearance of the app.
 - **icon.ico** - This is the icon for the app. It is formatted for Windows, so you may need to convert the file format if you do not have a compatible device.
 - **icon.png** - This is also the icon for the app. It is formatted for other OS, such as Linux. 
-- **package.json** - This holds information about the app. 
+- **package.json** - This holds information about the app.
+- **config.jinst** - This is currently data for a feature that is in an early alpha stage. This feature will probably be released in early 2024. 
   
   **WARNING: As this is still in an extremely early alpha stage, many features are nonexistent or unstable. I do not recommend using the launcher at this time.**
   **This is not currently compatible with Mac OS. Compatibility with Linux isn't fully tested.**
