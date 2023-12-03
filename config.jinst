@@ -1,6 +1,7 @@
 {
   "description":"The official Mine.craft Launcher.",
   "releaseApp":"first",
+  "iconURL":"icon.png",
   "assetURLScheme":"Mine.craft-Launcher-9.9.9-Alpha-win32-arm64.zip",
   "appInstallerStyle":{
     "bg_color":"#000000",
