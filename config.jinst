@@ -3,6 +3,7 @@
   "releaseApp":"first",
   "iconURL":"icon.png",
   "appFolder": "Mine.craft Launcher",
+  "appName":"Mine.craft Launcher",
   "appInstallerStyle":{
     "bg_color":"#000000",
     "color":"#ffffff",
