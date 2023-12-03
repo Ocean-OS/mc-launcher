@@ -5,6 +5,8 @@
   "appFolder": "Mine.craft Launcher",
   "appName":"Mine.craft Launcher",
   "useName":"false",
+  "useNameAsVersion":"true",
+  "useTagAsVersion":"false",
   "appInstallerStyle":{
     "bg_color":"#000000",
     "color":"#ffffff",
