@@ -7,6 +7,7 @@
   "useName":"false",
   "useNameAsVersion":"true",
   "useTagAsVersion":"false",
+  "useForVersion":"name",
   "appInstallerStyle":{
     "bg_color":"#000000",
     "color":"#ffffff",
