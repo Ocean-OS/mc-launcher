@@ -1,7 +1,7 @@
 # This workflow will do a clean installation of node dependencies, cache/restore them, build the source code and run tests across different versions of node
 # For more information see: https://docs.github.com/en/actions/automating-builds-and-tests/building-and-testing-nodejs
 
-# name: Electron Packager (Linux)
+# name: Electron Packager
 
 #on:
 #  push:
@@ -28,6 +28,7 @@
 #        cache: 'npm'
  #   - run: echo "::set-output name=zip-name::$(jq -r .productName package.json)"
   #  - run: npm i electron-packager@latest
+#    - run: sudo apt-get install wine
    # - run: npx electron-packager . --arch=arm64 --platform=linux --icon=icon.png --overwrite
   #  - run: npx electron-packager . --arch=x86 --platform=linux --icon=icon.png --overwrite
    # - run: npx electron-packager . --arch=x86_64 --platform=linux --icon=icon.png --overwrite
