@@ -33,6 +33,12 @@
    # - run: npx electron-packager . --arch=x86_64 --platform=linux --icon=icon.png --overwrite
   #  - run: npx electron-packager . --arch=armv7l --platform=linux --icon=icon.png --overwrite
    # - run: npx electron-packager . --arch=mips64el --platform=linux --icon=icon.png --overwrite
-  #  - run: wget
+# - run: npx electron-packager . --arch=x64 --platform=linux --icon=icon.png --overwrite
+  #  - run: wget https://github.com/electron/electron/releases/download/v25.0.1/electron-v25.0.1-linux-arm64.zip
+#    - run: wget https://github.com/electron/electron/releases/download/v25.0.1/electron-v25.0.1-linux-x64.zip
+#    - run: wget https://github.com/electron/electron/releases/download/v25.0.1/electron-v25.0.1-linux-x86.zip
+#    - run: wget https://github.com/electron/electron/releases/download/v25.0.1/electron-v25.0.1-linux-x86_64.zip
+#    - run: wget https://github.com/electron/electron/releases/download/v25.0.1/electron-v25.0.1-linux-armv7l.zip
+#    - run: wget https://github.com/electron/electron/releases/download/v25.0.1/electron-v25.0.1-linux-mips64el.zip
    # - run: zip -r -q ${{ steps.read-package.outputs.zip-name }}-linux-arm64.zip ${{ steps.read-package.outputs.zip-name }}-linux-arm64/
   #  - run: zip -r -q ${{ steps.read-package.outputs.zip-name }}-linux-x86.zip ${{ steps.read-package.outputs.zip-name }}-linux-x86/
