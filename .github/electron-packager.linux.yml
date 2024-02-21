@@ -1,5 +1,4 @@
-# This workflow will do a clean installation of node dependencies, cache/restore them, build the source code and run tests across different versions of node
-# For more information see: https://docs.github.com/en/actions/automating-builds-and-tests/building-and-testing-nodejs
+# This workflow automates the build process for the launcher.
 
 # name: Electron Packager
 
@@ -36,4 +35,4 @@
    # - run: npx electron-packager . --arch=mips64el --platform=linux --icon=icon.png --overwrite
   #  - run: wget
    # - run: zip -r -q ${{ steps.read-package.outputs.zip-name }}-linux-arm64.zip ${{ steps.read-package.outputs.zip-name }}-linux-arm64/
-  #  - run: zip -r -q ${{ steps.read-package.outputs.zip-name }}-linux-x64.zip ${{ steps.read-package.outputs.zip-name }}-linux-x64/
+  #  - run: zip -r -q ${{ steps.read-package.outputs.zip-name }}-linux-x86.zip ${{ steps.read-package.outputs.zip-name }}-linux-x86/
