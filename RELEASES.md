@@ -8,7 +8,7 @@ The following document details the process of building releases for the Mine.cra
 ## Automation
 There are currently projects to automate the building of the launcher, using either GitHub Actions or build scripts. These may be active as early as March of 2024. 
 ## Testing
-Each binary that is compatible is tested a **minimum** of four times, testing all features, and finding any bugs or ways to break the app. This testing sequence includes, but is not limited to: 
+Each binary that is compatible is tested a **minimum** of four times, testing all features, and finding any bugs or ways to break the app. This testing sequence repeats at least two more times if the game's runtime is changed or updated. This testing sequence includes, but is not limited to: 
 1. Running all available Mine.craft versions
 2. Testing offline capabilities
 3. Running internet tests, such as going offline halfway through an update, having slow internet, etc
