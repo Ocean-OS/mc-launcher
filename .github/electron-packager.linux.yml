@@ -28,7 +28,7 @@
 #        cache: 'npm'
  #   - run: echo "::set-output name=zip-name::$(jq -r .productName package.json)"
   #  - run: npm i electron-packager@latest
-#    - run: sudo apt-get install wine
+#    - run: sudo dpkg --add-architecture i386 && wget -qO - https://dl.winehq.org/wine-builds/winehq.key | sudo apt-key add - && sudo add-apt-repository ppa:cybermax-dexter/sdl2-backport && sudo apt-add-repository "deb https://dl.winehq.org/wine-builds/ubuntu $(lsb_release -cs) main" && sudo apt install --install-recommends winehq-stable
    # - run: npx electron-packager . --arch=arm64 --platform=linux --icon=icon.png --overwrite
   #  - run: npx electron-packager . --arch=x86 --platform=linux --icon=icon.png --overwrite
    # - run: npx electron-packager . --arch=x86_64 --platform=linux --icon=icon.png --overwrite
