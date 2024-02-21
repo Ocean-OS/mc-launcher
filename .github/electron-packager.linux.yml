@@ -28,12 +28,12 @@
  #   - run: echo "::set-output name=zip-name::$(jq -r .productName package.json)"
   #  - run: npm i electron-packager@latest
 #    - run: sudo dpkg --add-architecture i386 && wget -qO - https://dl.winehq.org/wine-builds/winehq.key | sudo apt-key add - && sudo add-apt-repository ppa:cybermax-dexter/sdl2-backport && sudo apt-add-repository "deb https://dl.winehq.org/wine-builds/ubuntu $(lsb_release -cs) main" && sudo apt install --install-recommends winehq-stable
-   # - run: npx electron-packager . --arch=arm64 --platform=linux --icon=icon.png --overwrite
-  #  - run: npx electron-packager . --arch=x86 --platform=linux --icon=icon.png --overwrite
-   # - run: npx electron-packager . --arch=x86_64 --platform=linux --icon=icon.png --overwrite
-  #  - run: npx electron-packager . --arch=armv7l --platform=linux --icon=icon.png --overwrite
-   # - run: npx electron-packager . --arch=mips64el --platform=linux --icon=icon.png --overwrite
-# - run: npx electron-packager . --arch=x64 --platform=linux --icon=icon.png --overwrite
+   # - run: npx electron-packager . --arch=arm64 --platform=linux --icon=icon.png --overwrite && mkdir {{ steps.read-package.outputs.zip-name }}-linux-arm64/resources/app/electron
+  #  - run: npx electron-packager . --arch=x86 --platform=linux --icon=icon.png --overwrite && mkdir {{ steps.read-package.outputs.zip-name }}-linux-x86/resources/app/electron
+   # - run: npx electron-packager . --arch=x86_64 --platform=linux --icon=icon.png --overwrite && mkdir {{ steps.read-package.outputs.zip-name }}-linux-x86_64/resources/app/electron
+  #  - run: npx electron-packager . --arch=armv7l --platform=linux --icon=icon.png --overwrite && mkdir {{ steps.read-package.outputs.zip-name }}-linux-armv7l/resources/app/electron
+   # - run: npx electron-packager . --arch=mips64el --platform=linux --icon=icon.png --overwrite && mkdir {{ steps.read-package.outputs.zip-name }}-linux-mips64el/resources/app/electron
+# - run: npx electron-packager . --arch=x64 --platform=linux --icon=icon.png --overwrite && mkdir {{ steps.read-package.outputs.zip-name }}-linux-x64/resources/app/electron
   #  - run: wget https://github.com/electron/electron/releases/download/v25.0.1/electron-v25.0.1-linux-arm64.zip
 #    - run: wget https://github.com/electron/electron/releases/download/v25.0.1/electron-v25.0.1-linux-x64.zip
 #    - run: wget https://github.com/electron/electron/releases/download/v25.0.1/electron-v25.0.1-linux-x86.zip
