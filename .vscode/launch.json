@@ -4,8 +4,11 @@
         {
             "type": "node-terminal",
             "request": "launch",
-            "name": "Run",
-            "command": "npm run dev"
+            "name": "Run Launcher (dev)",
+            "command": "electron ."
         },
+        {
+            ""
+        }
     ]
 }
