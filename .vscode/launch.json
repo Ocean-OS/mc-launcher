@@ -8,7 +8,7 @@
             "command": "electron ."
         },
         {
-            ""
+            "type": "node-terminal",
         }
     ]
 }
